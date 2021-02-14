@@ -21,7 +21,7 @@ You can purchase it at [https://store.badlion.net/category/bac/](https://store.b
 </dependency>
 ```
 
-####Gradle dependency
+#### Gradle dependency
 ```groovy
 repositories {
     repository {
