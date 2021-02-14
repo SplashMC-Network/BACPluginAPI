@@ -5,11 +5,14 @@ This repository explains how to use Badlion AntiCheat Api bundled in the BAC plu
 You can purchase it at [https://store.badlion.net/category/bac/](https://store.badlion.net/category/bac/)
 
 #### Maven dependency
-
-1. Clone this repository
-2. Run `mvn clean install`
-3. Add the following code to your pom.xml file :
 ```xml
+<repositories>
+    <repository>
+        <id>splashmc-public</id>
+        <url>https://maven.ceanstudios.de/repository/splashmc-public/</url>
+    </repository>
+</repositories>
+
 <dependency>
     <groupId>net.badlion.heartbeat</groupId>
     <artifactId>heartbeat-api</artifactId>
@@ -18,11 +21,26 @@ You can purchase it at [https://store.badlion.net/category/bac/](https://store.b
 </dependency>
 ```
 
+####Gradle dependency
+```groovy
+repositories {
+    repository {
+        maven {
+            url = uri('https://maven.ceanstudios.de/repository/splashmc-public/')
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'net.badlion.heartbeat:heartbeat-api:1.0-SNAPSHOT'
+}
+```
+
 */!\ Make sure to set it as provided or it won't be working properly.*
 
 ### API Usage
 
-All the methods that you can use are documented [here](https://github.com/BadlionNetwork/BACPluginAPI/blob/master/src/main/java/net/badlion/heartbeatapi/HeartbeatApi.java).
+All the methods that you can use are documented [here](https://github.com/SplashMC-Network/BACPluginAPI/blob/master/src/main/java/net/badlion/heartbeatapi/HeartbeatApi.java).
 
 ### Plugin Message API
 
