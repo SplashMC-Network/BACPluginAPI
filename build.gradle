@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'net.badlion.heartbeat'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://oss.sonatype.org/content/repositories/snapshots')
+    }
+
+    maven {
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+    }
+
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    compileOnly 'net.md-5:bungeecord-api:1.16-R0.4-SNAPSHOT'
+    compileOnly 'net.md-5:bungeecord-api:1.16-R0.4-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
+    compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
+}
+
+
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = 'splashmc'
+            url = 'https://maven.ceanstudios.de/repository/splashmc-public/'
+            credentials {
+                username = "$mavenUser"
+                password = "$mavenPassword"
+            }
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
