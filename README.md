@@ -9,7 +9,7 @@ You can purchase it at [https://store.badlion.net/category/bac/](https://store.b
 <repositories>
     <repository>
         <id>splashmc-public</id>
-        <url>https://maven.ceanstudios.de/repository/splashmc-public/</url>
+        <url>https://maven.splashmc.tech/repository/splashmc-public/</url>
     </repository>
 </repositories>
 
@@ -26,7 +26,7 @@ You can purchase it at [https://store.badlion.net/category/bac/](https://store.b
 repositories {
     repository {
         maven {
-            url = uri('https://maven.ceanstudios.de/repository/splashmc-public/')
+            url = uri('https://maven.splashmc.tech/repository/splashmc-public/')
         }
     }
 }
